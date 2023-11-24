@@ -1,0 +1,60 @@
+def myresult():
+    s1=int(sem1m.get())
+    s2=int(sem2m.get())
+    s3=int(sem3m.get())
+    s4=int(sem4m.get())
+    s5=int(sem5m.get())
+    s6=int(sem6m.get())
+    cgpa=s1+s2+s3+s4+s5+s6
+    avg=cgpa//6
+    if avg>=10:
+        gr="O"
+    elif avg>=9:
+        gr="A+"
+    elif avg>=8:
+        gr="A"
+    elif avg>=7:
+        gr="B"
+    elif avg>=6:
+        gr="C"
+    elif avg>=5:
+        gr="D"
+    elif avg>=4:
+        gr="P"
+    else:
+        gr="fail"
+        
+    s="Total:"+str(avg)+"Grade:"+gr
+    res.config(text=s)
+from tkinter import *
+result=Tk()
+result.title("Student Result")
+sem1=Label(result,text="Enter sem1 marks:")
+sem1m=Entry(result)
+sem2=Label(result,text="Enter sem2 marks:")
+sem2m=Entry(result)
+sem3=Label(result,text="Enter sem3 marks:")
+sem3m=Entry(result)
+sem4=Label(result,text="Enter sem4 marks:")
+sem4m=Entry(result)
+sem5=Label(result,text="Enter sem5 marks:")
+sem5m=Entry(result)
+sem6=Label(result,text="Enter sem6 marks:")
+sem6m=Entry(result)
+b1=Button(result,text="Submit",command=myresult)
+res=Label(result,text="?")
+sem1.grid(row=0,column=0)
+sem1m.grid(row=0,column=1)
+sem2.grid(row=1,column=0)
+sem2m.grid(row=1,column=1)
+sem3.grid(row=2,column=0)
+sem3m.grid(row=2,column=1)
+sem4.grid(row=3,column=0)
+sem4m.grid(row=3,column=1)
+sem5.grid(row=4,column=0)
+sem5m.grid(row=4,column=1)
+sem6.grid(row=5,column=0)
+sem6m.grid(row=5,column=1)
+b1.grid(row=6,column=0)
+res.grid(row=6,column=1)
+result.mainloop()
